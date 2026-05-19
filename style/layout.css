@@ -1,0 +1,410 @@
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 22px 0 28px;
+}
+
+.topbar,
+.hero-card,
+.board-section,
+.charts-section {
+  border: 1px solid rgba(163, 179, 216, 0.35);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(55, 71, 105, 0.08);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 24px;
+  padding: 18px 22px;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-mark {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 95%;
+  height: 95%;
+  display: block;
+  object-fit: contain;
+}
+
+.metric span,
+.metric small,
+.card-total,
+.card-foot,
+.card-head,
+.expense-card th,
+.expense-card td {
+  letter-spacing: 0.01em;
+}
+
+.metric span,
+.metric small,
+.metric small {
+  color: #69789a;
+}
+
+.brand-lockup h1,
+.hero-copy h2,
+.board-header h3,
+.add-card h4,
+.card-head h4 {
+  margin: 0;
+  line-height: 1.08;
+}
+
+.brand-lockup h1 {
+  font-size: 2rem;
+}
+
+.dashboard {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+  min-width: 0;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 28px;
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.hero-copy h2 {
+  font-size: clamp(2rem, 2.8vw, 3.25rem);
+  max-width: 13ch;
+}
+
+.section-text {
+  max-width: 58ch;
+  margin: 14px 0 0;
+  color: #51607e;
+  line-height: 1.6;
+}
+
+.hero-metrics {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.metric {
+  border-radius: 22px;
+  padding: 18px 20px;
+  background: linear-gradient(180deg, rgba(248, 250, 255, 0.96), rgba(239, 244, 255, 0.88));
+  border: 1px solid rgba(168, 185, 220, 0.3);
+}
+
+.metric-primary {
+  background: linear-gradient(180deg, rgba(243, 236, 255, 0.95), rgba(236, 231, 255, 0.82));
+}
+
+.metric strong {
+  display: block;
+  margin: 8px 0 4px;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+}
+
+.income-input {
+  display: block;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  margin: 8px 0 4px;
+  padding: 4px 0;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #1f2a44;
+  font-weight: 600;
+  text-align: left;
+  outline: none;
+  border-bottom: 1px solid rgba(130, 143, 177, 0.2);
+  transition: border-color 0.2s ease;
+}
+
+.income-input:focus {
+  border-bottom-color: rgba(91, 137, 255, 0.4);
+}
+
+.income-input::placeholder {
+  color: rgba(31, 42, 68, 0.3);
+}
+
+.board-section {
+  border-radius: 28px;
+  padding: 22px;
+  min-width: 0;
+}
+
+.board-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+.cards-viewport {
+  min-width: 0;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.charts-section {
+  border-radius: 28px;
+  padding: 22px;
+  min-width: 0;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1f2a44;
+  font-weight: 700;
+}
+
+.chart-mode-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(130, 143, 177, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  color: #58647f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chart-mode-toggle:hover {
+  background: rgba(91, 137, 255, 0.1);
+  color: #5b89ff;
+  border-color: rgba(91, 137, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 137, 255, 0.15);
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.chart-card {
+  border-radius: 20px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(248, 250, 255, 0.96), rgba(239, 244, 255, 0.88));
+  border: 1px solid rgba(168, 185, 220, 0.3);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Row drag handle */
+.row-handle {
+  display: inline-block;
+  width: 20px;
+  margin-right: 8px;
+  color: #9ba3b8;
+  cursor: grab;
+  user-select: none;
+}
+.row-handle:active { cursor: grabbing; }
+
+
+.charts-container {
+  display: grid;
+  /* default two-column layout: chart + stats */
+  grid-template-columns: minmax(300px, 1.2fr) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* When viewing categories-only, expand chart area and hide the stats column */
+
+/* Only the SECOND charts-section should be wider and hide stats */
+.charts-section:nth-of-type(2) .charts-container {
+  grid-template-columns: minmax(640px, 1fr);
+}
+
+.charts-section:nth-of-type(2) .chart-stats {
+  display: none;
+}
+
+/* keep default chart-wrapper height in wide mode (no override) */
+
+.chart-card {
+  border-radius: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(248, 250, 255, 0.96), rgba(239, 244, 255, 0.88));
+  border: 1px solid rgba(168, 185, 220, 0.3);
+  min-width: 0;
+}
+
+.chart-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-item {
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(168, 185, 220, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stat-item.positive {
+  background: linear-gradient(135deg, rgba(200, 230, 201, 0.6), rgba(165, 214, 167, 0.5));
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+.stat-item.negative {
+  background: linear-gradient(135deg, rgba(239, 154, 154, 0.6), rgba(229, 119, 119, 0.5));
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+.stat-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label span {
+  font-size: 0.85rem;
+  color: #6b7691;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.stat-percentage {
+  font-size: 0.75rem;
+  color: #9ba3b8;
+  margin-top: 2px;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 28px;
+  padding: 18px 0;
+  color: #6b7691;
+  font-size: 0.95rem;
+}
+
+.app-footer .footer-inner {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app-footer .project-name {
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.app-footer .authors {
+  color: #58647f;
+}
+
+/* Export PDF button - large glasmorphic card */
+.export-pdf-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 24px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  color: #4f66b3;
+  font-weight: 600;
+  grid-column: 1 / -1;
+  margin: 0 auto;
+}
+
+.export-pdf-btn svg {
+  color: #4f66b3;
+  stroke: #4f66b3;
+}
+
+.export-pdf-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.export-pdf-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.export-pdf-desc {
+  font-size: 12px;
+  color: #6b7691;
+  font-weight: 500;
+}
+
+.export-pdf-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 102, 179, 0.15);
+}
+
+.export-pdf-btn:active {
+  transform: translateY(0px);
+}

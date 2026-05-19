@@ -1,0 +1,82 @@
+@media (max-width: 1180px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-card {
+    flex-basis: 320px;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .topbar,
+  .hero-card,
+  .board-section {
+    border-radius: 20px;
+  }
+
+  .topbar,
+  .board-header {
+    flex-direction: column;
+  }
+
+  .expense-card {
+    flex-basis: 290px;
+    min-height: auto;
+  }
+
+  .brand-lockup {
+    gap: 12px;
+  }
+
+  .brand-lockup h1 {
+    font-size: 1.7rem;
+  }
+
+  .cards-track {
+    gap: 14px;
+  }
+
+  .card-foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new-table-form {
+    max-width: none;
+  }
+
+  .expense-card td:last-child,
+  .expense-card th:last-child {
+    width: 48px;
+  }
+
+  .cards-viewport {
+    padding-bottom: 10px;
+  }
+
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .stat-item {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 1.1rem;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+  }
+}

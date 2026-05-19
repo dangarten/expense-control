@@ -1,0 +1,440 @@
+.cards-viewport {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 14px;
+}
+
+.cards-track {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+  min-width: 100%;
+  width: 100%;
+  flex-wrap: nowrap;
+  scroll-snap-type: x proximity;
+}
+
+.expense-card {
+  flex: 0 0 335px;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  scroll-snap-align: start;
+}
+
+.card-purple {
+  background: linear-gradient(180deg, rgba(240, 232, 255, 0.95), rgba(250, 246, 255, 0.96));
+  border-color: rgba(174, 141, 255, 0.28);
+}
+
+.card-green {
+  background: linear-gradient(180deg, rgba(236, 244, 232, 0.95), rgba(250, 255, 247, 0.96));
+  border-color: rgba(156, 204, 154, 0.3);
+}
+
+.card-orange {
+  background: linear-gradient(180deg, rgba(252, 240, 225, 0.95), rgba(255, 248, 240, 0.96));
+  border-color: rgba(255, 194, 133, 0.3);
+}
+
+.card-blue {
+  background: linear-gradient(180deg, rgba(237, 244, 255, 0.96), rgba(246, 249, 255, 0.98));
+  border-color: rgba(152, 189, 255, 0.34);
+}
+
+.card-head,
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px 10px;
+}
+
+.card-head {
+  border-bottom: 1px solid rgba(130, 143, 177, 0.16);
+}
+
+.card-total {
+  font-size: 0.87rem;
+  color: #6b7691;
+}
+
+.expense-card table {
+  table-layout: fixed;
+}
+
+.expense-card tbody {
+  display: block;
+  max-height: 420px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130, 143, 177, 0.24) transparent;
+  direction: rtl;
+}
+
+.expense-card tbody tr {
+  direction: ltr;
+}
+
+.expense-card tbody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.expense-card tbody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.expense-card tbody::-webkit-scrollbar-thumb {
+  background: rgba(130, 143, 177, 0.24);
+  border-radius: 3px;
+}
+
+.expense-card tbody::-webkit-scrollbar-thumb:hover {
+  background: rgba(130, 143, 177, 0.36);
+}
+
+.expense-card thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.expense-card tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.card-title-input,
+.cell-input,
+.new-table-input {
+  width: 100%;
+  border: 1px solid rgba(130, 143, 177, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 10px 12px;
+  color: #1f2a44;
+  outline: none;
+}
+
+.card-title-input {
+  max-width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #1f2a44;
+}
+
+.card-title-input:focus,
+.cell-input:focus,
+.new-table-input:focus {
+  box-shadow: none;
+}
+
+.cell-input,
+.new-table-input {
+  border: none;
+  background: transparent;
+  padding: 6px 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.95rem;
+  color: #1f2a44;
+}
+
+.cell-input::placeholder {
+  color: rgba(31, 42, 68, 0.45);
+}
+
+.cell-input[type="number"]::-webkit-outer-spin-button,
+.cell-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cell-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.expense-card th,
+.expense-card td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(130, 143, 177, 0.14);
+  font-size: 0.94rem;
+  vertical-align: middle;
+}
+
+.expense-card th {
+  font-weight: 500;
+  color: #58647f;
+  font-size: 0.84rem;
+}
+
+.expense-card tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.expense-card td:nth-child(2),
+.expense-card th:nth-child(2) {
+  width: 64px;
+  text-align: center;
+}
+
+.expense-card td:nth-child(3),
+.expense-card th:nth-child(3) {
+  width: 96px;
+}
+
+.expense-card td:last-child,
+.expense-card th:last-child {
+  width: 56px;
+  text-align: right;
+}
+
+.expense-card th:first-child,
+.expense-card td:first-child {
+  padding-left: 12px;
+}
+
+/* Keep the first cell as a horizontal flex container so the
+   drag handle sits to the left and the input grows to fill space */
+.expense-card td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expense-card td:first-child .cell-input {
+  width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.expense-card td:nth-child(2) .cell-input,
+.expense-card td:nth-child(3) .cell-input {
+  width: 100%;
+}
+
+.card-chip {
+  font-size: 0.88rem;
+  color: #66718f;
+}
+
+.trash-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  color: inherit;
+}
+
+.icon-button,
+.ghost-button,
+.primary-button {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #6d7895;
+  border: 1px solid rgba(130, 143, 177, 0.12);
+}
+
+/* Ensure SVGs inside icon buttons are visually centered */
+.icon-button svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+/* Slightly increase delete-table SVG for better visual weight */
+.delete-table svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Delete table icon in bottom-right */
+.delete-table {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.9);
+  color: #9a4960;
+  border: 1px solid rgba(154,73,96,0.12);
+  box-shadow: 0 6px 12px rgba(25,30,50,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.delete-table:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(25,30,50,0.09);
+}
+
+/* Add-row button placed to the left of the delete button */
+.add-row {
+  position: absolute;
+  right: 70px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.95);
+  color: #2f7a40;
+  border: 1px solid rgba(47,122,64,0.08);
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 6px 12px rgba(25,30,50,0.04);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.add-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(25,30,50,0.06);
+}
+
+/* Disabled state for add-row button when limit reached */
+.add-row[disabled],
+.add-row[aria-disabled='true'] {
+  opacity: 0.55;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+  color: #86a68a;
+}
+
+.icon-button:hover,
+.ghost-button:hover,
+.primary-button:hover {
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(130, 143, 177, 0.12);
+  color: #31405f;
+}
+
+.ghost-button-danger {
+  color: #9a4960;
+}
+
+.primary-button {
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #7387ff, #7b5cff);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(115, 135, 255, 0.24);
+}
+
+.add-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 28px;
+}
+
+.add-badge {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 2px dashed #80a6ff;
+  color: #5b89ff;
+  font-size: 2.1rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.75);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  cursor: pointer;
+}
+
+.add-card h4 {
+  font-size: 1.15rem;
+}
+
+.add-card p {
+  max-width: 18ch;
+  margin: 10px 0 0;
+  color: #5e6d8e;
+  line-height: 1.45;
+}
+
+.add-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(25, 30, 50, 0.09);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Sortable drag styles */
+.cards-track .expense-card {
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 160ms ease;
+}
+.sortable-ghost {
+  opacity: 1;
+  transform: translateY(-6px) !important;
+  border: 1px dashed rgba(91,137,255,0.28) !important;
+  box-shadow: 0 8px 18px rgba(25,30,50,0.06) !important;
+  background: rgba(255,255,255,1) !important;
+}
+.sortable-chosen {
+  box-shadow: 0 10px 22px rgba(25,30,50,0.09);
+}
+
+.new-table-form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 240px;
+  margin-top: 8px;
+}
+
+.new-table-input {
+  text-align: center;
+  color: #31405f;
+  border-bottom: 1px solid rgba(130, 143, 177, 0.18);
+  padding-bottom: 10px;
+}
+
+.expense-card table thead th {
+  font-weight: 400;
+  color: #6f7890;
+}
+
+.expense-card tbody tr:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.expense-card tbody td {
+  transition: background 0.15s ease;
+}
+
+.cell-input-center {
+  text-align: center;
+}

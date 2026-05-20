@@ -1,11 +1,36 @@
 # Controle de gastos pessoais (Gastify)
-O sistema consiste em um projeto acadêmico relativo a uma aplicação web de controle de gastos pessoais, desenvolvida com HTML, CSS e JavaScript, onde os dados são armazenados localmente no navegador do usuário. A aplicação permite registrar despesas, organizá-las por categorias e visualizar os gastos de forma simples e prática.
+## Sobre o Projeto
+O Gastify é uma aplicação web de controle de gastos pessoais desenvolvida com foco em organização financeira, praticidade e facilidade de uso. O sistema foi criado para ajudar usuários a acompanharem suas despesas do dia a dia de maneira simples, rápida e intuitiva, sem necessidade de cadastro complexo ou conexão com banco de dados.
+
+A aplicação permite que o usuário registre seus gastos, organize despesas por categorias personalizadas e acompanhe o valor total gasto em tempo real. Todas as informações são armazenadas localmente no navegador utilizando LocalStorage, garantindo praticidade e funcionamento totalmente offline.
+
+O projeto foi desenvolvido utilizando apenas tecnologias front-end (html, css e javascript) com objetivo acadêmico e educacional, aplicando conceitos fundamentais de desenvolvimento web, manipulação de dados, responsividade e persistência de informações no navegador.
+
+Além disso, o sistema possui uma interface moderna, responsiva e intuitiva, proporcionando uma experiência agradável tanto em computadores quanto em dispositivos móveis.
+
+O Gastify busca demonstrar como aplicações simples podem oferecer soluções úteis para o cotidiano, utilizando recursos leves e acessíveis da web moderna.
+## Objetivo
+O objetivo do sistema é facilitar o gerenciamento financeiro pessoal sem necessidade de:
+- banco de dados
+- login
+- internet
+- instalação de aplicativos
+  
+Tudo funciona diretamente no navegador.
+## Funcionalidades
+- Cadastro de categorias
+- Registro de gastos
+- Listagem de despesas
+- Exclusão de gastos
+- Cálculo automático do total gasto
+- Agrupamento de gastos por categoria
+- Persistência de dados utilizando LocalStorage
 ## Tecnologias
-- HTML
-- CSS 
-- JavaScript 
-- LocalStorage
-## RF
+- HTML: Estrutura da aplicação
+- CSS:  Estilização da interface
+- JavaScript:   Regras de negócio
+- LocalStorage: Armazenamento local dos dados
+## Requisitos Funcionais (RF)
 - RF01: O sistema deve permitir cadastrar usuário (nome simples)
 - RF02: O sistema deve permitir cadastrar categorias
 - RF03: O sistema deve permitir registrar gastos
@@ -13,12 +38,12 @@ O sistema consiste em um projeto acadêmico relativo a uma aplicação web de co
 - RF05: O sistema deve agrupar gastos por categoria
 - RF06: O sistema deve calcular o total de gastos
 - RF07: O sistema deve permitir excluir gastos
-## RNF
+## Requisitos Não Funcionais (RNF)
 - RNF01: O sistema deve funcionar em navegadores modernos
 - RNF02: O sistema deve ser simples e intuitivo
 - RNF03: Os dados devem ser armazenados localmente
 - RNF05: A interface deve ser responsiva
-## RN
+## Regras de Negócio (RN)
 - RN01: Todo gasto deve possuir uma categoria
 - RN02: O valor do gasto deve ser maior que zero
 - RN03: Uma categoria pode ter vários gastos
@@ -30,7 +55,7 @@ O sistema consiste em um projeto acadêmico relativo a uma aplicação web de co
 - Listagem de gastos
 - Cálculo de total gasto
 - Visualização simples (lista ou gráfico básico)
-## Não Escopo
+## Fora do Escopo
 - Integração com banco de dados
 - Sistema de login com senha
 - Armazenamento em nuvem
@@ -41,3 +66,17 @@ O sistema consiste em um projeto acadêmico relativo a uma aplicação web de co
 - Registrar gastos
 - Exibir lista de gastos
 - Mostrar total gasto
+## Estrutura do Projeto
+Gastify/
+│
+├── README.md
+├── cypress.config.js
+├── index.html
+├── script.js
+└── style.css
+## Armazenamento Local
+O sistema utiliza:
+- localStorage
+
+Os dados permanecem salvos mesmo após fechar o navegador.
+
